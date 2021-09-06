@@ -30,9 +30,7 @@ function playRound(playerSelection,computerSelection){
     }
     if(computerSelection===playerSelection)
     {
-        console.log("Tied");
         t=t+1;
-        console.log("Wins: "+w + " Loses: "+l + " Ties: "+t);
 
         const container = document.querySelector('#storagel');
         const content = document.createElement('p');
@@ -49,122 +47,45 @@ function playRound(playerSelection,computerSelection){
     }
     else if(playerSelection==="rock" && computerSelection==="paper")
     {
-        console.log("You Lose");
         l=l+1;
-        console.log("Wins: "+w + " Loses: "+l + " Ties: "+t);
-        const container = document.querySelector('#storagel');
-        const content = document.createElement('p');
-        content.classList.add('content');
-        content.textContent = playerSelection;
-        container.appendChild(content);
+        roundLose(playerSelection,computerSelection)
         b=b+1;
-        const container2 = document.querySelector('#storager');
-        const content2 = document.createElement('p');
-        content2.classList.add('content2');
-        content2.textContent = computerSelection;
-        container2.appendChild(content2);
-        const l1=document.querySelector('#sccmp');
-        l1.textContent=l;
+
     }
     else if(playerSelection==="rock" && computerSelection==="scissors")
     {
-        console.log("You Win");
         w=w+1;
-        console.log("Wins: "+w + " Loses: "+l + " Ties: "+t);
-        const container = document.querySelector('#storagel');
-        const content = document.createElement('p');
-        content.classList.add('content');
-        content.textContent = playerSelection;
-        container.appendChild(content);
+        roundWin(playerSelection,computerSelection);
         b=b+1;
-        const container2 = document.querySelector('#storager');
-        const content2 = document.createElement('p');
-        content2.classList.add('content2');
-        content2.textContent = computerSelection;
-        container2.appendChild(content2);
-        const w1=document.querySelector('#scyou');
-        w1.textContent=w;
     }
     else if(playerSelection==="paper" && computerSelection==="scissors")
     {
-        console.log("You Lose");
         l=l+1;
-        console.log("Wins: "+w + " Loses: "+l + " Ties: "+t);
-        const container = document.querySelector('#storagel');
-        const content = document.createElement('p');
-        content.classList.add('content');
-        content.textContent = playerSelection;
-        container.appendChild(content);
+        roundLose(playerSelection,computerSelection)
         b=b+1;
-        const container2 = document.querySelector('#storager');
-        const content2 = document.createElement('p');
-        content2.classList.add('content2');
-        content2.textContent = computerSelection;
-        container2.appendChild(content2);
-        const l1=document.querySelector('#sccmp');
-        l1.textContent=l;
+
         
     }
     else if(playerSelection==="paper" && computerSelection==="rock")
     {
-        console.log("You Win");
         w=w+1;
-        console.log("Wins: "+w + " Loses: "+l + " Ties: "+t);
-        const container = document.querySelector('#storagel');
-        const content = document.createElement('p');
-        content.classList.add('content');
-        content.textContent = playerSelection;
-        container.appendChild(content);
+        roundWin(playerSelection,computerSelection);
         b=b+1;
-        const container2 = document.querySelector('#storager');
-        const content2 = document.createElement('p');
-        content2.classList.add('content2');
-        content2.textContent = computerSelection;
-        container2.appendChild(content2);
-        const w1=document.querySelector('#scyou');
+
         w1.textContent=w;
     }
     else if(playerSelection==="scissors" && computerSelection==="rock")
     {
-        console.log("You Lose");
         l=l+1;
-        console.log("Wins: "+w + " Loses: "+l + " Ties: "+t);
-        const container = document.querySelector('#storagel');
-        const content = document.createElement('p');
-        content.classList.add('content');
-        content.textContent = playerSelection;
-        container.appendChild(content);
+        roundLose(playerSelection,computerSelection)
         b=b+1;
-        const container2 = document.querySelector('#storager');
-        const content2 = document.createElement('p');
-        content2.classList.add('content2');
-        content2.textContent = computerSelection;
-        container2.appendChild(content2);
-        const l1=document.querySelector('#sccmp');
-        l1.textContent=l;
     }
     else if(playerSelection==="scissors" && computerSelection==="paper")
     {
-        console.log("You Win");
         w=w+1;
-        console.log("Wins: "+w + " Loses: "+l + " Ties: "+t);
-        const container = document.querySelector('#storagel');
-        const content = document.createElement('p');
-        content.classList.add('content');
-        content.textContent = playerSelection;
-        container.appendChild(content);
+        roundWin(playerSelection,computerSelection);
         b=b+1;
-        const container2 = document.querySelector('#storager');
-        const content2 = document.createElement('p');
-        content2.classList.add('content2');
-        content2.textContent = computerSelection;
-        container2.appendChild(content2);
-        const w1=document.querySelector('#scyou');
-        w1.textContent=w;
-    }
-    else
-    {
-        console.log("!!!WRONG INPUT!!!");
+
     }
     if(w===5 )
     {
@@ -229,6 +150,34 @@ function changeA(classs){
         w2.animationTimingFunction="linear";
         w2.animationDelay= "0s";
         
+}
+function roundWin(playerSelection,computerSelection){
+        const container = document.querySelector('#storagel');
+        const content = document.createElement('p');
+        content.classList.add('content');
+        content.textContent = playerSelection;
+        container.appendChild(content);
+        const container2 = document.querySelector('#storager');
+        const content2 = document.createElement('p');
+        content2.classList.add('content2');
+        content2.textContent = computerSelection;
+        container2.appendChild(content2);
+        const w1=document.querySelector('#scyou');
+        w1.textContent=w;
+}
+function roundLose(playerSelection,computerSelection){
+        const container = document.querySelector('#storagel');
+        const content = document.createElement('p');
+        content.classList.add('content');
+        content.textContent = playerSelection;
+        container.appendChild(content);
+        const container2 = document.querySelector('#storager');
+        const content2 = document.createElement('p');
+        content2.classList.add('content2');
+        content2.textContent = computerSelection;
+        container2.appendChild(content2);
+        const l1=document.querySelector('#sccmp');
+        l1.textContent=l;
 }
 var w=0;
 var t=0;
