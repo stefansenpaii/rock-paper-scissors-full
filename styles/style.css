@@ -20,6 +20,7 @@ body{
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 0.7px;
     -webkit-text-stroke-color: rgb(255, 255, 255);
+    text-align: center;
     
 }
 #buttons{
@@ -218,9 +219,9 @@ h3{
 }
 
 #finish{
-    position:absolute;
-    min-width: 100%;
-    min-height: 100%;
+    position: fixed;
+    width: 100%;
+    height: 100%;
     left:0px;
     top:0px;
     background-color: rgb(163, 163, 163);
@@ -229,7 +230,9 @@ h3{
 
 }
 #dec{
+    display: block;
     position: absolute;
+    text-align: center;
     font-size: 80px;
     background: -webkit-linear-gradient(rgba(255,90,251,1), rgba(13,168,232,1));
     -webkit-background-clip: text;
@@ -239,18 +242,17 @@ h3{
     -webkit-text-stroke-color: rgb(255, 255, 255);
     z-index:-1;
     opacity: 0%;
-    margin-left: auto;
-    margin-right: auto; 
-    left:740px;
-    top:350px;
-    right:0;
+    top:355px;
+    left:50%;
+    transform: translate(-50%);
+    min-width: 100%;
+    
 }
+
 #endo{
     position: absolute;
     width:404px;
     height: 70px;
-    left:757px;
-    top:495px;
     background-image: url(bgbt.jpg);
     background-position: center;
     background-size: 404px 70px;
@@ -266,6 +268,9 @@ h3{
     border-style: solid;
     margin-left: auto;
     margin-right: auto;
+    top:490px;
+    left:50%;
+    transform: translate(-50%);
 
 }
 #endo:hover{
@@ -373,7 +378,7 @@ h3{
     100%{
         width:440px;
         height: 75px;
-        left:739px;
+        left:49.9%;
         background-size: 440px 75px;
         font-size:32px;
         border-style: solid;
