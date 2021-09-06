@@ -72,7 +72,6 @@ function playRound(playerSelection,computerSelection){
         roundWin(playerSelection,computerSelection);
         b=b+1;
 
-        w1.textContent=w;
     }
     else if(playerSelection==="scissors" && computerSelection==="rock")
     {
@@ -87,7 +86,7 @@ function playRound(playerSelection,computerSelection){
         b=b+1;
 
     }
-    if(w===5 )
+    if(w===5)
     {
         btn1.disabled=true;
         btn2.disabled=true;
